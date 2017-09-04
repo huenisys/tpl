@@ -39,7 +39,7 @@ class TplServiceProvider extends ServiceProvider
             __DIR__.'/../resources/assets' => resource_path('tpl/assets'),
         ], 'tpl-assets');
 
-
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
     }
 

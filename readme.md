@@ -6,6 +6,10 @@
 - For development, use autoload-dev instead
 ```
 "autoload-dev": {
+    "classmap": [
+        "../laravel-packages/huenisys/tpl/database/seeds",
+        "../laravel-packages/huenisys/tpl/database/factories"
+    ],
     "psr-4": {
         "Tests\\": "tests/",
         "Huenisys\\Tpl\\": "../laravel-packages/huenisys/tpl/src"
@@ -18,12 +22,18 @@
 
 ## Steps
 
-- remove Laravel's default root route / in routes/web.php
+- remove Laravel's default root route / in routes/web.php and replace with
+```
+Route::get(
+ '/', '\Huenisys\Tpl\Http\Controllers\TplPageController@getWelcome'
+);
+ ```
 - publish assets: ``art vendor:publish --tag=tpl-assets --force``
 - generate public files using Laravel Mix as described below
 - update your mailer config
+- setup the database as described below
 
-## Laravel Mix Steps
+### Laravel Mix Steps
 
 - require-dev bootstrap and popper for BS4 in your package.json
 ```
@@ -53,6 +63,9 @@ mix.autoload({
 - replace robots.txt as desired. default: seo is off
 - $ ``npm run dev`` or $ ``npm run prod``
 
-## Home Route
 
-- add Route::get('/', '\Huenisys\Tpl\Http\Controllers\TplPageController@getWelcome');
+### Setup database
+
+- Update .env to use DB_CONNECTION=sqlite, delete all other DB entries
+- Do a fresh migration: $ ``art migrate:refresh``
+- Seed it: $ ``art db:seed --class=TplSeeder``

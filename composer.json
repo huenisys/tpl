@@ -16,6 +16,10 @@
         "illuminate/support": "^5.4"
     },
     "autoload": {
+        "classmap": [
+            "database/seeds",
+            "database/factories"
+        ],
         "psr-4": {
             "Huenisys\\Tpl\\":"src/"
         }
