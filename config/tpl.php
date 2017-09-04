@@ -1,9 +1,12 @@
 <?php
 
 return [
+    
+    'app_env' => env('APP_ENV'),
+    'subdomain' => env('SUBDOMAIN', 'xxx_'.env('APP_ENV')),
+    
     // appears in page title
-    'site_name' => 'Huenits.com',
-    'site_brand' => 'Huenits',
+    'site_brand' => env('SITE_BRAND', 'Huenits'),
 
     'home_heading' => 'Build awesome sites fast',
     'home_tagline' => 'Huenits.com empowers you to build your stunning website in seconds. Easy and free.',

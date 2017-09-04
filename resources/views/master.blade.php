@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>@yield('title', 'Home') | {{ $site_name }}</title>
+        <title>@yield('title', 'Home') | {{ $site_brand }}</title>
         <meta name="csrf-token" content="{{ csrf_token() }}">
         @stack('metas')
         <link href="{{mix('css/app-tpl.css')}}" rel="stylesheet" type="text/css">
@@ -15,7 +15,7 @@
         </style>
 
     </head>
-    <body>
+    <body x-app-env={{ $app_env }} x-subdomain={{ $subdomain }}>
         <div id="app"></div>
         @include('tpl::master._navbar')
         @section('body')
