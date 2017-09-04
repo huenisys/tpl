@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Faker\Generator as Faker;
 
 class TplFaqsSeeder extends Seeder
 {
@@ -9,11 +10,31 @@ class TplFaqsSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
-        \DB::table('faqs')->insert([
-            'question' => 'Paul',
-            'answer' => 'paul@huenits.com'
+        Huenisys\Tpl\Faqs::create([
+          'question' => rtrim($faker->sentence,'.').'?',
+          'answer' => $faker->paragraph,
+        ]);
+
+        Huenisys\Tpl\Faqs::create([
+          'question' => rtrim($faker->sentence,'.').'?',
+          'answer' => $faker->paragraph,
+        ]);
+
+        Huenisys\Tpl\Faqs::create([
+          'question' => rtrim($faker->sentence,'.').'?',
+          'answer' => $faker->paragraph.'?',
+        ]);
+
+        Huenisys\Tpl\Faqs::create([
+          'question' => rtrim($faker->sentence,'.').'?',
+          'answer' => $faker->paragraph.'?',
+        ]);
+
+        Huenisys\Tpl\Faqs::create([
+          'question' => rtrim($faker->sentence,'.').'?',
+          'answer' => $faker->paragraph,
         ]);
     }
 }

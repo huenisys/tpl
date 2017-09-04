@@ -4,6 +4,7 @@ namespace Huenisys\Tpl\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller as Controller;
+use Huenisys\Tpl\Faqs;
 
 class TplPageController extends Controller
 {
@@ -19,7 +20,11 @@ class TplPageController extends Controller
 
     public function getFaqs()
     {
-      return view('tpl::faqs');
+      $faqs = Faqs::all();
+
+      return view('tpl::faqs')->with([
+        'faqs'=>$faqs
+        ]);
     }
 
     public function getContact()

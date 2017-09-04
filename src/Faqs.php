@@ -1,6 +1,6 @@
 <?php
 
-namespace Huenisys\Tpl\Model;
+namespace Huenisys\Tpl;
 
 use Illuminate\Database\Eloquent\Model;
 

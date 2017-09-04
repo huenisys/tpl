@@ -67,5 +67,4 @@ mix.autoload({
 ### Setup database
 
 - Update .env to use DB_CONNECTION=sqlite, delete all other DB entries
-- Do a fresh migration: $ ``art migrate:refresh``
-- Seed it: $ ``art db:seed --class=TplSeeder``
+- Do a fresh migration with seeds: $ ``art migrate:refresh --seeder=TplSeeder``
