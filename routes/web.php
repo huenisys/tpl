@@ -6,8 +6,9 @@ Route::group(['middleware' => ['web'], 'namespace' => 'Huenisys\Tpl\Http\Control
   Route::get('dashboard', 'TplPageController@getDashboard')->name('dashboard')->middleware('auth');
   Route::get('logout', 'TplPageController@getLogout')->middleware('guest');
 
-  Route::get('contact', 'TplPageController@getContact');
   Route::get('features', 'TplPageController@getFeatures');
+  Route::get('faqs', 'TplPageController@getFaqs');
+  Route::get('contact', 'TplPageController@getContact');
   Route::get('terms-and-privacy', 'TplPageController@getLegal')->name('legal');
 
   Route::get('tpl-test', function(){

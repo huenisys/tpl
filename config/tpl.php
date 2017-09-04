@@ -14,12 +14,11 @@ return [
 
     'menu1_links' => [
       'Features' => '/features',
-      'FAQs' => '#faqs',
+      'FAQs' => '/faqs',
       'Contact' => '/contact',
     ],
 
     'menu2_links' => [
-      'Pricing' => '#pricing',
       'Terms and Privacy' => '/terms-and-privacy'
     ],
 

@@ -7,15 +7,19 @@ use App\Http\Controllers\Controller as Controller;
 
 class TplPageController extends Controller
 {
+    public function getWelcome()
+    {
+      return view('tpl::welcome');
+    }
 
     public function getDashboard()
     {
       return view('tpl::dashboard');
     }
 
-    public function getWelcome()
+    public function getFaqs()
     {
-      return view('tpl::welcome');
+      return view('tpl::faqs');
     }
 
     public function getContact()
