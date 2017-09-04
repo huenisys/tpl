@@ -2,7 +2,7 @@
 
 Route::group(['middleware' => ['web'], 'namespace' => 'Huenisys\Tpl\Http\Controllers'], function () {
 
-  Route::get('/', 'TplPageController@getWelcome');
+  // Route::get('/', 'TplPageController@getWelcome');
   Route::get('dashboard', 'TplPageController@getDashboard')->name('dashboard')->middleware('auth');
   Route::get('logout', 'TplPageController@getLogout')->middleware('guest');
 

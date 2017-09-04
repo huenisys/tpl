@@ -52,3 +52,7 @@ mix.autoload({
 - replace favicon.ico with your own
 - replace robots.txt as desired. default: seo is off
 - $ ``npm run dev`` or $ ``npm run prod``
+
+## Home Route
+
+- add Route::get('/', '\Huenisys\Tpl\Http\Controllers\TplPageController@getWelcome');
