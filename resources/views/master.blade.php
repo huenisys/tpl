@@ -15,7 +15,7 @@
         </style>
 
     </head>
-    <body x-app-env={{ $app_env }} x-subdomain={{ $subdomain }}>
+    <body x-app-env="{{ $app_env }}" x-subdomain="{{ $subdomain }}">
         <div id="app"></div>
         @include('tpl::master._navbar')
         @section('body')
