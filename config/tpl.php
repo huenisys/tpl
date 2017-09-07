@@ -13,7 +13,7 @@ return [
     'home_button_text' => 'Create Now',
 
     'menu1_links' => [
-      'Features' => '/features',
+      'Features1' => '/features',
       'FAQs' => '/faqs',
       'Contact' => '/contact',
     ],
